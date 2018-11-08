@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//  * this file demonstrates a basic toggle that renders props.children
+//  * this file demonstrates a reusable render props based toggle
 
 export default class toggle extends Component {
     state = {
@@ -13,8 +13,7 @@ export default class toggle extends Component {
   render() {
     return (
       <div>
-        {this.state.on && this.props.children}
-        <button onClick={this.toggle}>Show/Hide</button>
+        {this.props.render({ on: this.state.on, toggle: this.toggle })}
       </div>
     )
   }
