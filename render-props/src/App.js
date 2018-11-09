@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
-
 import Toggle from './components/ToggleRPC';
 
 class App extends Component {
@@ -13,12 +12,13 @@ class App extends Component {
             <button onClick={toggle}>Show/Hide</button>
           </div>
         )}/> */}
+
         <Toggle>
           {({on, toggle}) => (
-            <div>
+            <Fragment>
               {on && <h1>Show Me!</h1>}
               <button onClick={toggle}>Toggle</button>
-            </div>
+            </Fragment>
           )}
         </Toggle>
       </div>
